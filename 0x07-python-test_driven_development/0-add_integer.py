@@ -1,23 +1,18 @@
 #!/usr/bin/python3
 """
-    Project for learning doctests
-    0_add_integer module
+This is the "0-add_integer" module.
+The 0-add_integer module supplies one function, add_integer(a, b).
 """
 
 
-def add_integer(a, b=98):
-    """ adds two integers
-    Args:
-        a: first integer
-        b: second integer (defaults to 98)
-    If arguments are not of integer or float data type, raise
-    TypeError
-    If floats are provided, casts them to integers
-    Returns:
-        sum of the two integers
-    """
-    if not isinstance(a, int) and not isinstance(a, float):
+def add_integer(a, b):
+    """Return the addition of two numbers."""
+    if type(a) is not int and type(a) is not float:
         raise TypeError("a must be an integer")
-    if not isinstance(b, int) and not isinstance(b, float):
+    if type(b) is not int and type(b) is not float:
         raise TypeError("b must be an integer")
-    return int(a) + int(b)
+    if type(a) is float:
+        a = int(a)
+    if type(b) is float:
+        b = int(b)
+    return a + b
